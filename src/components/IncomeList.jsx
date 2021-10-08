@@ -1,15 +1,18 @@
 import React from 'react'
 
-export default function IncomeList({ income }) {
+export default function IncomeList({ incomeList, totalIncome }) {
+
+    const listItems = incomeList.map(function (item) {
+        return <p key={item.key}> {item.name} <span>Rs. {item.amount}</span></p>
+    })
+
     return (
         <div className="incomeList">
             <h3>Income</h3>
 
             <div className="incList">
-                <p>Salary <span>Rs. 48000</span></p>
-                <p>Stocks <span>Rs. 2000</span></p>
-                <p>Tracker (App) <span>Rs. 5000</span></p>
-                <h4>Total <span>Rs. {income}</span></h4>
+                {listItems}
+                <h4>Total <span>Rs. {totalIncome}</span></h4>
             </div>
         </div>
     )

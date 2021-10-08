@@ -7,21 +7,41 @@ import ExpenseList from './components/ExpenseList';
 
 function App() {
 
-	const [expense, setExpense] = useState(15200);
-	const [income, setIncome] = useState(55000);
-	const [left, setLeft] = useState();
+	const [amountLeft, setAmountLeft] = useState();
+
+	const [expenseList, setExpenseList] = useState([
+		{ key: 1, name: 'Keyboard classes', amount: 1500 },
+		{ key: 2, name: 'French classes', amount: 1200 },
+		{ key: 3, name: 'Stocks', amount: 12000 },
+		{ key: 4, name: 'Grocery', amount: 500 },
+	]);
+	
+	const [incomeList, setIncomeList] = useState([
+		{ key: 1, name: 'Salary', amount: 48000 },
+		{ key: 2, name: 'Stocks', amount: 2000 },
+		{ key: 3, name: 'Tracker (App)', amount: 5000 },
+	]);
+
+	var totalIncome = 0;
+    incomeList.map((item) => {
+        totalIncome = totalIncome + item.amount
+    })
+	var totalExpense = 0;
+    expenseList.map((item) => {
+        totalExpense = totalExpense + item.amount
+    })
 
 	useEffect(() => {
-		setLeft(income-expense);
+		setAmountLeft(totalIncome-totalExpense);
 	}, [])
 
 	return (
 		<>
 			<div className="App">
-				<Header left={left} />
+				<Header amountLeft={amountLeft} />
 				<div className="sect">
-					<IncomeList income={income} />
-					<ExpenseList expense={expense} />
+					<IncomeList incomeList={incomeList} totalIncome={totalIncome} />
+					<ExpenseList expenseList={expenseList} totalExpense={totalExpense} />
 				</div>
 
 				<button className="add" onClick={() => {
