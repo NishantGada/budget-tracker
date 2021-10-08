@@ -7,15 +7,18 @@ import ExpenseList from './components/ExpenseList';
 
 function App() {
 
-	const [modal, setModal] = useState(false)
+	const [modal, setModal] = useState(false);
+	const [expense, setExpense] = useState(15200);
+	const [income, setIncome] = useState(55000);
+	const [left, setLeft] = useState(38800);
 
 	return (
 		<>
 			<div className="App">
-				<Header />
+				<Header left={left} />
 				<div className="sect">
-					<IncomeList />
-					<ExpenseList />
+					<IncomeList income={income} />
+					<ExpenseList expense={expense} />
 				</div>
 
 				<button className="add" onClick={() => {
