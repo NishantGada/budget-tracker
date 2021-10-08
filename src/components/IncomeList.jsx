@@ -3,7 +3,7 @@ import React from 'react'
 export default function IncomeList({ income }) {
     return (
         <div className="incomeList">
-            <h3>Income List</h3>
+            <h3>Income</h3>
 
             <div className="incList">
                 <p>Salary <span>Rs. 48000</span></p>
