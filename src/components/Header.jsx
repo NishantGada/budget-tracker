@@ -5,7 +5,7 @@ export default function Header() {
         <div className="header">
             <h2>Tracker</h2>
 
-            <h3><span>Amount Left:</span> Rs. 38200</h3>
+            <h3><span>Amount Left:</span> Rs. 38800</h3>
         </div>
     )
 }
