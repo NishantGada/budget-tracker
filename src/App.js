@@ -28,11 +28,27 @@ function App() {
 			</div>
 
 			<div id="modal">
+				<div className="form-section">
+					<h4>Add an income</h4>
+					<form className="incomeForm">
+						<input type="text" name="income" id="income" placeholder="Enter name"/> <br />
+						<input type="number" name="incomeValue" id="incomeValue" placeholder="Enter amount"/>
+						<input type="submit" value="Add" />
+					</form>
+					
+					<h4>Add an expense</h4>
+					<form className="expenseForm">
+						<input type="text" name="expense" id="expense" placeholder="Enter name"/> <br />
+						<input type="number" name="expenseValue" id="expenseValue" placeholder="Enter amount"/>
+						<input type="submit" value="Add" />
+					</form>
+				</div>
+
 				<button onClick={() => {
 					document.getElementById("modal").style.visibility = "hidden";
 					document.getElementsByClassName("App")[0].style.filter = "brightness(1)"
 					setModal(false)
-				}}>X</button>
+				}}>+</button>
 			</div>
 		</>
 	);

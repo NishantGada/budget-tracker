@@ -88,7 +88,7 @@
   width: 60%;
   height: 70%;
   background-color: white;
-  padding: 20px;
+  padding: 10px 20px;
 
   visibility: hidden;
 
@@ -99,8 +99,47 @@
   right: 0;
   top: 80px;
   /* text-align: center; */
+
+  display: flex;
+  /* align-items: center; */
+	justify-content: space-between;
 }
 
 #modal button {
   float: right;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+	font-size: 30px;
+  font-weight: bold;
+  transform: rotate(45deg);
+}
+
+.form-section {
+  /* border: 1px solid black; */
+  max-height: 100%;
+  width: 70%;
+}
+
+.form-section form input {
+  width: 100%;
+  margin: 10px 0 0 0;
+  background-color: #e9e9e9;
+  border: none;
+  outline: none;
+  padding: 7px;
+}
+
+.form-section form input[type=submit] {
+  background-color: #fff;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.form-section h4 {
+  margin-top: 20px;
 }
